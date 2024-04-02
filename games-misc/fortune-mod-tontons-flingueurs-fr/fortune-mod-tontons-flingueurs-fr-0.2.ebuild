@@ -14,7 +14,7 @@ KEYWORDS="~alpha amd64 ~arm ~hppa ~m68k ~mips ~ppc64 ~s390 ~x86"
 RDEPEND="games-misc/fortune-mod"
 
 src_compile() {
-	mv "${WORKDIR}/fortune-mod-tontons-flingueurs-fr${PV}/tontons-flingueurs" tontons-flingueurs || die
+	mv "${WORKDIR}/fortune-mod-tontons-flingueurs-fr-${PV}/tontons-flingueurs" tontons-flingueurs || die
 	strfile tontons-flingueurs || die
 }
 
