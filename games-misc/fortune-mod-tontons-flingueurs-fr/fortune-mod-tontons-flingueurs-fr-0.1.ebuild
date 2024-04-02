@@ -13,12 +13,11 @@ KEYWORDS="~alpha amd64 ~arm ~hppa ~m68k ~mips ~ppc64 ~s390 ~x86"
 
 RDEPEND="games-misc/fortune-mod"
 
-# src_compile() {
-# 	mv "bashfr-${PV}" bashfr || die
-# 	strfile bashfr || die
-# }
+src_compile() {
+	strfile tontons-fligeurs || die
+}
 
 src_install() {
 	insinto /usr/share/fortune
-	doins tontonsflingueurs tontonsflingueurs.folded tontonsflingueurs.dat || die
+	doins tontons-flingueurs tontons-flingueurs.dat || die
 }
