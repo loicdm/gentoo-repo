@@ -5,7 +5,7 @@ EAPI=7
 
 DESCRIPTION="Fortune cookies from french movie Les Tontons Flingeurs"
 HOMEPAGE="https://github.com/loicdm/fortune-mod-tontons-flingueurs-fr"
-SRC_URI="https://github.com/loicdm/fortune-mod-tontons-flingueurs-fr/raw/main/tontonsflingueurs.tar.gz"
+SRC_URI="https://github.com/loicdm/fortune-mod-tontons-flingueurs-fr/archive/refs/tags/0.2.tar.gz"
 S="${WORKDIR}"
 LICENSE="GPL-2 fairuse"
 SLOT="0"
