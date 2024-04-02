@@ -20,5 +20,5 @@ RDEPEND="games-misc/fortune-mod"
 
 src_install() {
 	insinto /usr/share/fortune
-	doins tontonflingueurs tontonflingueurs.folded tontonflingueurs.dat || die
+	doins tontonsflingueurs tontonsflingueurs.folded tontonsflingueurs.dat || die
 }
