@@ -9,7 +9,7 @@ SRC_URI="https://github.com/loicdm/fortune-mod-tontons-flingueurs-fr/raw/main/to
 S="${WORKDIR}"
 LICENSE="GPL-2 fairuse"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~m68k ~mips ~ppc64 ~s390 ~x86"
+KEYWORDS="~alpha amd64 ~arm ~hppa ~m68k ~mips ~ppc64 ~s390 ~x86"
 
 RDEPEND="games-misc/fortune-mod"
 
