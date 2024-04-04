@@ -8,7 +8,7 @@ inherit xdg
 DESCRIPTION="Dracula GTK theme"
 HOMEPAGE="https://draculatheme.com/gtk"
 SRC_URI="
-	https://github.com/dracula/gtk/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.xz
+	https://github.com/dracula/gtk/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
 "
 #https://github.com/dracula/gtk/releases/download/v${PV}/Dracula-shell-pink-accent-v40.tar.xz -> ${P}-pink-v40.tar.xz
 #https://github.com/dracula/gtk/releases/download/v${PV}/Dracula-shell-v40.tar.xz -> ${P}-v40.tar.xz
