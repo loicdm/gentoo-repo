@@ -28,7 +28,18 @@ src_prepare() {
 src_install() {
 	insinto /usr/share/themes
 	doins -r "${S}"/.
+
 	insinto /usr/share/Kvantum
 	doins -r "${S}"/Dracula/kde/kvantum/.
+
+	insinto /usr/share/
+	doins -r "${S}"/Dracula/kde/color-schemes
+	doins -r "${S}"/Dracula/kde/plasma
+
+	insinto /usr/share/aurorae/themes
+	doins -r "${S}"/Dracula/kde/aurorae/.
+
+	insinto /usr/share/sddm/themes
+	doins -r "${S}"/Dracula/kde/sddm/.
 }
 
