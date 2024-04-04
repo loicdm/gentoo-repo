@@ -22,10 +22,7 @@ SLOT="0"
 src_prepare() {
 	default
 	local theme
-	for theme in * ; do
-		sed -e "/^Name\s*=Ant-Dracula/s|^.*$|Name=${theme}|" \
-			-i "${theme}"/index.theme || die
-	done
+	mv * Dracula
 }
 
 src_install() {
