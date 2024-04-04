@@ -29,6 +29,6 @@ src_install() {
 	insinto /usr/share/themes
 	doins -r "${S}"/.
 	insinto /usr/share/Kvantum
-	doins -r "${S}"/Dracula/kde/kvantum
+	doins -r "${S}"/Dracula/kde/kvantum/.
 }
 
