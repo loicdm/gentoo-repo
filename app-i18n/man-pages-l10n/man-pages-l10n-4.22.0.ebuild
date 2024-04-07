@@ -56,7 +56,7 @@ src_prepare() {
 		sulogin.8
 		# sys-process/procps
 		#free.1
-		pgrep.1
+		#pgrep.1
 		pmap.1
 		ps.1
 		pwdx.1
