@@ -49,22 +49,12 @@ src_prepare() {
 		mountpoint.1
 		utmpdump.1
 		wall.1
-		#halt.8
 		killall5.8
 		runlevel.8
 		shutdown.8
 		sulogin.8
 		# sys-process/procps
-		#free.1
-		#pgrep.1
-		pmap.1
-		ps.1
-		pwdx.1
-		tload.1
 		uptime.1
-		sysctl.conf.5
-		sysctl.8
-		vmstat.8
 		# sys-process/psmisc
 		fuser.1
 		killall.1
@@ -76,6 +66,24 @@ src_prepare() {
 
 	for f in "${noinst_manpages[@]}"; do
 		rm po/*/"man${f##*.}/${f}.po" || die
+	done
+
+   local f noinst_manpages_archive=(
+   		# sys-apps/sysvinit
+		halt.8
+   		# sys-process/procps
+		free.1
+		pgrep.1
+		pmap.1
+		ps.1
+		pwdx.1
+		tload.1
+		sysctl.conf.5
+		sysctl.8
+		vmstat.8
+	)
+	for f in "${noinst_manpages_archive[@]}"; do
+		rm po/*/"archive/man${f##*.}/${f}.po" || die
 	done
 }
 
