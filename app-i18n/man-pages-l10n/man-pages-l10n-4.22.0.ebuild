@@ -49,7 +49,7 @@ src_prepare() {
 		mountpoint.1
 		utmpdump.1
 		wall.1
-		halt.8
+		#halt.8
 		killall5.8
 		runlevel.8
 		shutdown.8
