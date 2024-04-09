@@ -15,7 +15,7 @@ KEYWORDS="amd64 ~x86"
 DEPEND=""
 RDEPEND="kde-apps/konsole"
 
-S="${WORKDIR}/konsole-${GIT_REV}"
+S="${WORKDIR}/konsole-master"
 
 src_install() {
 	insinto /usr/share/konsole
