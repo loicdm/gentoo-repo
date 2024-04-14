@@ -104,6 +104,7 @@ src_install() {
 	if use appindicator; then
 		dosym ../../usr/lib64/libayatana-appindicator3.so /opt/discord/libappindicator3.so
 	fi
+    make_desktop_entry "armcord" "ArmCord" "armcord" "Internet;Network;InstantMessaging;"
 }
 
 pkg_postinst() {
