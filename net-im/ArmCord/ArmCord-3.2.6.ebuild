@@ -14,8 +14,9 @@ inherit chromium-2 desktop linux-info optfeature unpacker xdg
 
 DESCRIPTION="ArmCord is a custom client designed to enhance your Discord experience while keeping everything lightweight. "
 HOMEPAGE="https://armcord.app/"
-SRC_URI="https://github.com/ArmCord/ArmCord/releases/download/v${PV}/${PN}-${PV}.tar.gz"
-S="${WORKDIR}/${PN}-${PV}"
+SRC_URI="https://github.com/ArmCord/ArmCord/releases/download/v${PV}/${P}.tar.gz -> ${P}.tar.gz
+		 https://raw.githubusercontent.com/ArmCord/ArmCord/dev/assets/desktop.png -> armcord.png"
+# S="${WORKDIR}/${PN}-${PV}"
 
 LICENSE="OSL-3.0 license"
 SLOT="0"
@@ -63,7 +64,7 @@ QA_PREBUILT="*"
 CONFIG_CHECK="~USER_NS"
 
 src_unpack() {
-	unpack ${PN}-${PV}.tar.gz
+	unpack ${P}.tar.gz
 }
 
 src_configure() {
@@ -104,6 +105,8 @@ src_install() {
 	if use appindicator; then
 		dosym ../../usr/lib64/libayatana-appindicator3.so /opt/discord/libappindicator3.so
 	fi
+	#newicon "bin/${PN}.svg" "${PN}.svg"
+	die
     make_desktop_entry "armcord" "ArmCord" "armcord" "Internet;Network;InstantMessaging;"
 }
 
