@@ -7,4 +7,4 @@ LICENSE=MIT
 RDEPEND=kde-apps/konsole
 SLOT=0
 SRC_URI=https://github.com/dracula/konsole/archive/master.zip -> dracula-konsole-theme-1.0.zip
-_md5_=f243dd2e03eb582e236f11ce705c04de
+_md5_=2ea3a0658f566d2ee75f685c28a050b2

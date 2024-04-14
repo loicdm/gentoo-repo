@@ -15,7 +15,7 @@ inherit chromium-2 desktop linux-info optfeature unpacker xdg
 DESCRIPTION="ArmCord is a custom client designed to enhance your Discord experience while keeping everything lightweight. "
 HOMEPAGE="https://armcord.app/"
 SRC_URI="https://github.com/ArmCord/ArmCord/releases/download/v${PV}/${PN}-${PV}.tar.gz"
-S="${WORKDIR}/${PN^}"
+S="${WORKDIR}/${PN}-${PV}"
 
 LICENSE="OSL-3.0 license"
 SLOT="0"
