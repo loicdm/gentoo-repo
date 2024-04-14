@@ -3,6 +3,7 @@
 
 EAPI=8
 
+MY_PN=ArmCord
 
 CHROMIUM_LANGS="
 	af am ar bg bn ca cs da de el en-GB en-US es es-419 et fa fi fil fr gu he hi
@@ -14,9 +15,9 @@ inherit chromium-2 desktop linux-info optfeature unpacker xdg
 
 DESCRIPTION="ArmCord is a custom client designed to enhance your Discord experience while keeping everything lightweight. "
 HOMEPAGE="https://armcord.app/"
-SRC_URI="https://github.com/ArmCord/ArmCord/releases/download/v${PV}/${P}.tar.gz -> ${P}.tar.gz
+SRC_URI="https://github.com/ArmCord/ArmCord/releases/download/v${PV}/${MY_PN}-${PV}.tar.gz -> ${MY_PN}-${PV}.tar.gz
 		 https://raw.githubusercontent.com/ArmCord/ArmCord/dev/assets/desktop.png -> armcord.png"
-# S="${WORKDIR}/${PN}-${PV}"
+S="${WORKDIR}/${MY_PN}-${PV}"
 
 LICENSE="OSL-3.0 license"
 SLOT="0"
@@ -64,7 +65,7 @@ QA_PREBUILT="*"
 CONFIG_CHECK="~USER_NS"
 
 src_unpack() {
-	unpack ${P}.tar.gz
+	unpack ${MY_PN}-${PV}.tar.gz
 }
 
 src_configure() {
@@ -83,7 +84,7 @@ src_prepare() {
 src_install() {
 	exeinto "${DESTDIR}"
 
-	doexe armcord chrome-sandbox libEGL.so libffmpeg.so libGLESv2.so libvk_swiftshader.so
+	doexe ${PN} chrome-sandbox libEGL.so libffmpeg.so libGLESv2.so libvk_swiftshader.so
 
 	insinto "${DESTDIR}"
 	doins chrome_100_percent.pak chrome_200_percent.pak icudtl.dat resources.pak snapshot_blob.bin v8_context_snapshot.bin
@@ -99,15 +100,14 @@ src_install() {
 	# See #903616 and #890595
 	[[ -x chrome_crashpad_handler ]] && doins chrome_crashpad_handler
 
-	dosym "${DESTDIR}/armcord" "/usr/bin/armcord"
+	dosym "${DESTDIR}/${PN}" "/usr/bin/${PN}"
 
 	# https://bugs.gentoo.org/898912
 	if use appindicator; then
 		dosym ../../usr/lib64/libayatana-appindicator3.so /opt/discord/libappindicator3.so
 	fi
-	#newicon "bin/${PN}.svg" "${PN}.svg"
-	die
-    make_desktop_entry "armcord" "ArmCord" "armcord" "Internet;Network;InstantMessaging;"
+	newicon "${DISTDIR}/${PN}.svg" "${PN}.svg"
+    make_desktop_entry "${PN}" "${MY_PN}" "${PN}" "Internet;Network;InstantMessaging;"
 }
 
 pkg_postinst() {
