@@ -106,7 +106,7 @@ src_install() {
 	if use appindicator; then
 		dosym ../../usr/lib64/libayatana-appindicator3.so /opt/discord/libappindicator3.so
 	fi
-	newicon "${DISTDIR}/${PN}.svg" "${PN}.svg"
+	newicon "${DISTDIR}/${PN}.png" "${PN}.png"
     make_desktop_entry "${PN}" "${MY_PN}" "${PN}" "Internet;Network;InstantMessaging;"
 }
 
