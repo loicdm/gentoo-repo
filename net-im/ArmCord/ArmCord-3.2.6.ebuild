@@ -82,7 +82,7 @@ src_prepare() {
 src_install() {
 	exeinto "${DESTDIR}"
 
-	doexe "${PN^}" chrome-sandbox libEGL.so libffmpeg.so libGLESv2.so libvk_swiftshader.so
+	doexe armcord chrome-sandbox libEGL.so libffmpeg.so libGLESv2.so libvk_swiftshader.so
 
 	insinto "${DESTDIR}"
 	doins chrome_100_percent.pak chrome_200_percent.pak icudtl.dat resources.pak snapshot_blob.bin v8_context_snapshot.bin
