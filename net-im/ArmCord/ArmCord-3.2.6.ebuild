@@ -98,7 +98,7 @@ src_install() {
 	# See #903616 and #890595
 	[[ -x chrome_crashpad_handler ]] && doins chrome_crashpad_handler
 
-	dosym "${DESTDIR}/${PN^}" "/usr/bin/${PN}"
+	dosym "${DESTDIR}/armcord" "/usr/bin/armcord"
 
 	# https://bugs.gentoo.org/898912
 	if use appindicator; then
