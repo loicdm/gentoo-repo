@@ -1,0 +1,13 @@
+DEFINED_PHASES=install
+DESCRIPTION=Arc KDE customization
+EAPI=8
+HOMEPAGE=https://github.com/PapirusDevelopmentTeam/arc-kde/
+IUSE=aurorae +color-schemes +konsole konversation +kvantum +plasma +wallpapers +yakuake
+KEYWORDS=~amd64
+LICENSE=GPL-3+ wallpapers? ( CC-BY-SA-4.0 )
+RDEPEND=kvantum? ( x11-themes/kvantum )
+REQUIRED_USE=|| ( aurorae color-schemes konsole konversation kvantum plasma wallpapers yakuake )
+RESTRICT=binchecks strip test
+SLOT=0
+SRC_URI=https://github.com/PapirusDevelopmentTeam/arc-kde/archive/20220908.tar.gz -> arc-kde-20220908.tar.gz
+_md5_=4e2c01cb0a3638d1ddac848b9dbd6e5e
