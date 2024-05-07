@@ -83,6 +83,8 @@ BDEPEND="
 	${PYTHON_DEPS}
 	dev-build/cmake
 	dev-lang/nasm
+	dev-build/meson
+	dev-build/ninja
 "
 
 PATCHES=(
@@ -105,11 +107,7 @@ src_prepare() {
 	sed -i 's:.*\(/contrib\|contrib/\).*::g' \
 		"${S}"/make/include/main.defs \
 		|| die "Contrib removal failed."
-
 	default
-
-	cd "${S}/gtk" || die
-	eautoreconf
 }
 
 src_configure() {
@@ -124,7 +122,6 @@ src_configure() {
 		--prefix="${EPREFIX}/usr"
 		--disable-flatpak
 		$(usex !gtk --disable-gtk)
-		--disable-gtk4
 		$(usex !gstreamer --disable-gst)
 		$(use_enable x265)
 		$(use_enable numa)
