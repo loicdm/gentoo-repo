@@ -32,41 +32,28 @@ src_prepare() {
 	sed -i -e "/^SUBDIRS/s/=.*/= ${L10N//-/_}/" po/Makefile.{am,in} || die
 
 	# some packages have their own translations
-# 	local f noinst_manpages=(
-# 		# app-arch/xz-utils
-# # 		xz.1
-# # 		xzdec.1
-# # 		xzdiff.1
-# # 		xzgrep.1
-# # 		xzless.1
-# # 		xzmore.1
-# 		# sys-apps/shadow
-# 		# groups.1
-# 		# su.1
-# 		# sys-apps/sysvinit
-# 		# last.1
-# 		# mesg.1
-# 		# mountpoint.1
-# 		# utmpdump.1
-# 		# wall.1
-# 		# killall5.8
-# 		# runlevel.8
-# 		# shutdown.8
-# 		# sulogin.8
-# 		# sys-process/procps
-# 		# uptime.1
-# 		# sys-process/psmisc
-# 		# fuser.1
-# 		# killall.1
-# 		# peekfd.1
-# 		# prtstat.1
-# 		# pslog.1
-# 		# pstree.1
-# 	)
+ 	local f noinst_manpages=(
+		# sys-apps/shadow
+		groups.1
+		su.1
+		# sys-apps/sysvinit
+		last.1
+		mesg.1
+		mountpoint.1
+		utmpdump.1
+		wall.1
+		killall5.8
+		runlevel.8
+		shutdown.8
+		sulogin.8
+		# sys-process/procps
+		uptime.1
+
+ 	)
 #
-# 	for f in "${noinst_manpages[@]}"; do
-# 		rm po/*/"man${f##*.}/${f}.po" || die
-# 	done
+ 	for f in "${noinst_manpages[@]}"; do
+ 		rm po/*/"man${f##*.}/${f}.po" || die
+ 	done
 
    local f noinst_manpages_archive=(
    		# sys-apps/sysvinit
@@ -81,6 +68,21 @@ src_prepare() {
 		sysctl.conf.5
 		sysctl.8
 		vmstat.8
+	    # app-arch/xz-utils
+		xz.1
+		xzdec.1
+		xzdiff.1
+		xzgrep.1
+		xzless.1
+		xzmore.1
+		# sys-process/psmisc
+		fuser.1
+		killall.1
+		peekfd.1
+		prtstat.1
+		pslog.1
+		pstree.1
+
 	)
 	for f in "${noinst_manpages_archive[@]}"; do
 		rm po/*/"archive/man${f##*.}/${f}.po" || die
